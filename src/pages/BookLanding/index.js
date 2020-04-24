@@ -1,29 +1,23 @@
 import React, { useContext } from 'react';
-import { useEffect, useState } from 'react';
 
 import AppContext from '../../contexts/AppContext';
+import Book from '../../components/Book';
 
 function BookLanding() {
+    const { books } = useContext(AppContext);
 
-    const [books, searchBooks] = useState([]);
+    const renderBook = (book) => (
+        <Book 
+        {...book}
+        key={books.indexOf(book)}
+        />
+    )
 
-    const fetchBooks = async () => {
-        try {
-            let result = await fetch('http://localhost:3000/books');
-            let resJson = await result.json();
-            searchBooks(resJson)
-        } catch (err) {
-            console.log(err)
-        }   
-    }
-    useEffect(() => {
-        fetchBooks();
-    })
-    
     return(
-        <main>
-            <p>Books here</p>
-        </main>
+        <div>
+            <h1>Books here</h1>
+    {/* { [...books].map( b => renderBook(b) )} */}
+        </div>
     )
 }
 
