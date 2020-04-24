@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function useAppContext() {
 
@@ -9,6 +10,7 @@ export default function useAppContext() {
             let result = await fetch('http://localhost:3000/books');
             let resJson = await result.json();
             setBooks(resJson);
+            console.log(resJson[0]);
         } catch (err) {
             console.log(err);
         }   
@@ -20,4 +22,17 @@ export default function useAppContext() {
     return {
         books
     }
+};
+
+const bookPropTypes = {
+    title: PropTypes.string,
+    image: PropTypes.string,
+    author: PropTypes.arrayOf(
+      PropTypes.string
+    ),
+    synopsis: PropTypes.string
+  };
+
+export const providerPropTypes = {
+      books: PropTypes.arrayOf(PropTypes.shape(bookPropTypes))
 };

@@ -20,4 +20,6 @@ function App() {
   );
 }
 
+AppContext.Provider.propTypes = providerPropTypes;
+
 export default App;
