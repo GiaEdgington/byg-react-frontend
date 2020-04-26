@@ -10,13 +10,12 @@ export default function useAppContext() {
             let result = await fetch('http://localhost:3000/books');
             let resJson = await result.json();
             setBooks(resJson);
-            console.log(resJson[0]);
         } catch (err) {
             console.log(err);
         }   
     }
     useEffect(() => {
-        fetchBooks();
+        //fetchBooks();
     }, []);
 
     return {

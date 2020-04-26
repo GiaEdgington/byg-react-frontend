@@ -14,11 +14,20 @@ function BookLanding() {
     )
 
     return(
-        <div>
-            <h1>Books here</h1>
-            {/* {[...books].map(b => b[1])} */}
-     { [...books].map( b => renderBook(b) )} 
-        </div>
+        <main>
+            <header>
+                <form>
+                    <label>Your destination:</label><br/>
+                    <input type="text" placeholder="" name="destination"/><br/>
+                    <button className="">Search for Books</button>
+                </form>
+            </header>
+            <div>
+                <h1>Books here</h1>
+                {/* {[...books].map(b => b[1])} */}
+                { [...books].map( b => renderBook(b) )} 
+            </div>
+        </main>
     )
 }
 
