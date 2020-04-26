@@ -6,7 +6,7 @@ import Book from '../../components/Book';
 import styles from './styles.css';
 
 function BookLanding() {
-    const { books, findBooks } = useContext(AppContext);
+    const { books, findBooks, destination, updateDestination } = useContext(AppContext);
 
      const renderBook = (book) => (
         <Book 
@@ -15,11 +15,15 @@ function BookLanding() {
         />
     )
 
+    const handleChange = (location) => {
+        updateDestination(location);
+    }
+
     return(
         <main>
             <form className="form">
                 <label>Your destination:</label><br/>
-                <input type="text" placeholder="" name="destination"/><br/>
+                <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
                 <button className="" type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
                 <div>
