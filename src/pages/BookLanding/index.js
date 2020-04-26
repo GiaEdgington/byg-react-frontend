@@ -6,7 +6,7 @@ import Book from '../../components/Book';
 import styles from './styles.css';
 
 function BookLanding() {
-    const { books, findBooks, destination, updateDestination } = useContext(AppContext);
+    const { books, findBooks, updateDestination } = useContext(AppContext);
 
      const renderBook = (book) => (
         <Book 
