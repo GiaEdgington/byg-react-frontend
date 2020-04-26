@@ -5,19 +5,19 @@ export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
 
-    const fetchBooks = async (e) => {
-        e.preventDefault();
+    const fetchBooks = async () => {
         try {
             let result = await fetch('http://localhost:3000/books');
             let resJson = await result.json();
             //console.log(resJson);
+            console.log('test');
             setBooks(resJson);
         } catch (err) {
             console.log(err);
         }   
     }
     useEffect(() => {
-        // fetchBooks();
+        //fetchBooks();
     }, []);
 
     return {

@@ -17,10 +17,10 @@ function BookLanding() {
 
     return(
         <main>
-            <form className="form" onSubmit={findBooks}>
+            <form className="form">
                 <label>Your destination:</label><br/>
                 <input type="text" placeholder="" name="destination"/><br/>
-                <button className="">Search for Books</button>
+                <button className="" type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
                 <div>
                 <h1>Books here</h1>
