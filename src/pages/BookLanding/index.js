@@ -3,10 +3,12 @@ import React, { useContext } from 'react';
 import AppContext from '../../contexts/AppContext';
 import Book from '../../components/Book';
 
-function BookLanding() {
-    const { books } = useContext(AppContext);
+import styles from './styles.css';
 
-    const renderBook = (book) => (
+function BookLanding() {
+    const { books, findBooks } = useContext(AppContext);
+
+     const renderBook = (book) => (
         <Book 
         {...book}
         key={books.indexOf(book)}
@@ -15,19 +17,16 @@ function BookLanding() {
 
     return(
         <main>
-            <header>
-                <form>
-                    <label>Your destination:</label><br/>
-                    <input type="text" placeholder="" name="destination"/><br/>
-                    <button className="">Search for Books</button>
-                </form>
-            </header>
-            <div>
+            <form className="form" onSubmit={findBooks}>
+                <label>Your destination:</label><br/>
+                <input type="text" placeholder="" name="destination"/><br/>
+                <button className="">Search for Books</button>
+            </form>
+                <div>
                 <h1>Books here</h1>
-                {/* {[...books].map(b => b[1])} */}
-                { [...books].map( b => renderBook(b) )} 
+                { [...books].map( b => renderBook(b) )}
             </div>
-        </main>
+        </main> 
     )
 }
 
