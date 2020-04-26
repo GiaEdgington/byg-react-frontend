@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
-    const [destination, setDestination] = useState("");
+    const [destination, setDestination] = useState("New York City");
 
     const fetchBooks = async () => {
         try {
-            let result = await fetch('http://localhost:3000/books');
+            let result = await fetch(`http://localhost:3000/books?destination=${destination}`);
             let resJson = await result.json();
             setBooks(resJson);
         } catch (err) {
             console.log(err);
-        }   
+        }
     }
     useEffect(() => {
         //fetchBooks();
