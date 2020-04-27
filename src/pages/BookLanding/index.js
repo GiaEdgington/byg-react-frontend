@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 
 import AppContext from '../../contexts/AppContext';
 import Book from '../../components/Book';
+import Header from '../../components/Header';
 
 import styles from './styles.css';
 
 function BookLanding() {
-    const { books, findBooks, updateDestination } = useContext(AppContext);
+    const { books, findBooks, destination, updateDestination } = useContext(AppContext);
 
      const renderBook = (book) => (
         <Book 
@@ -21,13 +22,14 @@ function BookLanding() {
 
     return(
         <main>
+            <Header />
             <form className="form">
                 <label>Your destination:</label><br/>
                 <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
                 <button className="" type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
-                <div>
-                <h1>Books here</h1>
+            <div>
+                 <h1>Books set it {destination}</h1>
                 { [...books].map( b => renderBook(b) )}
             </div>
         </main> 
