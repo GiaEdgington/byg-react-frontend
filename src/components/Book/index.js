@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import MoreButton from '../MoreButton';
+import AddButton from '../AddButton';
+
 import styles from './Book.module.scss';
 
 const Book = ({
@@ -15,9 +18,9 @@ const Book = ({
             <h3>{title}</h3>
             <img src={image} alt={title} />
             <div className={styles.buttons}>
-                <button type="button">More</button>
+                <MoreButton />
                 {/* when hovered? create overlay with explanation*/}
-                <button type="button">Add Book</button>
+                <AddButton />
             </div>
             
             <div className= {styles.info}>
