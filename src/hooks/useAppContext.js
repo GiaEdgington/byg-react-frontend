@@ -5,6 +5,7 @@ export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
     const [destination, setDestination] = useState("New York City");
+    const [summary] = useState(false);
 
     const fetchBooks = async () => {
         try {
@@ -27,7 +28,8 @@ export default function useAppContext() {
         books,
         findBooks: fetchBooks,
         updateDestination,
-        destination
+        destination,
+        summary
     }
 };
 

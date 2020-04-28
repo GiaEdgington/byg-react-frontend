@@ -7,12 +7,13 @@ import Header from '../../components/Header';
 import styles from './BookLanding.module.scss';
 
 function BookLanding() {
-    const { books, findBooks, destination, updateDestination } = useContext(AppContext);
+    const { books, findBooks, destination, updateDestination, summary } = useContext(AppContext);
 
      const renderBook = (book) => (
         <Book 
         {...book}
         key={books.indexOf(book)}
+        isDisplayed = {summary}
         />
     )
 
