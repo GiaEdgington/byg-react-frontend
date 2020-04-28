@@ -26,10 +26,10 @@ function BookLanding() {
             <form className={styles.form}>
                 <label>Your destination:</label><br/>
                 <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
-                <button className="" type="button" value="submit" onClick={findBooks}>Search for Books</button>
+                <button type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
             <div>
-                 <h1>Books set it {destination}</h1>
+                 {/* <h1>Books set in {destination}</h1> */}
                 { [...books].map( b => renderBook(b) )}
             </div>
         </main> 
