@@ -28,7 +28,7 @@ function BookLanding() {
                 <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
                 <button type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
-            <div>
+            <div className={styles.container}>
                  {/* <h1>Books set in {destination}</h1> */}
                 { [...books].map( b => renderBook(b) )}
             </div>
