@@ -10,7 +10,8 @@ const Book = ({
     title,
     author,
     image,
-    synopsis
+    synopsis,
+    isDisplayed
 }) => {
 
     return(
@@ -22,12 +23,15 @@ const Book = ({
                 {/* when hovered? create overlay with explanation*/}
                 <AddButton />
             </div>
-            
+            { isDisplayed ? 
             <div className= {styles.info}>
                 <span className= {styles.author}>By {author}</span>
                 <hr/>
                 <span className= {styles.synopsis}>{synopsis}</span>
             </div>
+            :
+            ""
+            }
         </div>
     )
 }
