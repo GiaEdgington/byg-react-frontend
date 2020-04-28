@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 6rem auto;
+    font-size: 2em;
+
+    & label {
+        text-align: center;
+    }
+
+    & input  {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        border: 1px#C5B6A5 solid;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 20%;
+        transition: all .2s;
+    }
+}
+
+/* .form input {
+    width: 20rem;
+    border: 1px solid black;
+    line-height: 2.5rem;
+    margin: 2rem auto;
+} */
+
+/* .form button {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+} */

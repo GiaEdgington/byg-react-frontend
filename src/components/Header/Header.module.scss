@@ -1,17 +1,21 @@
+@import '../../sass/base.scss';
+
 .header {
-    height: 7rem;
-    background-image: linear-gradient(135deg, #D1BF7F 25%, #FFF1A1);
+    height: 9rem;
+    background-image: linear-gradient(145deg, $color-orange 35%, $color-champagne);
 
     display: flex;
     justify-content: space-between;
     //align on the y axis
     align-items: center;
+    font-size: 1.5rem;
 }
 
 h2 {
-    font-size: 1.9rem;
-    margin-left: 2rem;
-    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 3rem;
+    color: $color-white;
 }
 
 .userNav {
