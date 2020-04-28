@@ -1,0 +1,29 @@
+.header {
+    height: 7rem;
+    background-image: linear-gradient(135deg, #D1BF7F 25%, #FFF1A1);
+
+    display: flex;
+    justify-content: space-between;
+    //align on the y axis
+    align-items: center;
+}
+
+h2 {
+    font-size: 1.9rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.userNav {
+    //align-self: stretch;
+    display: flex;
+    align-items: center;
+
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+} 
