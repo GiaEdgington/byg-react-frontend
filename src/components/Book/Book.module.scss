@@ -2,7 +2,7 @@
 
 
 .bookCard {
-    width: 250px;
+    width: 200px;
     height: auto;
     padding: 0.5em;
 
@@ -13,25 +13,41 @@
     & h3 {
         font-size: 2rem;
         text-align: center;
+        margin-bottom: 2rem;
     }
 
     & img {
         width: 100%;
     }
 
+    & .buttons {
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-grey;
+        
+        & button {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $color-white;
+            padding: 1rem 1.5rem;
+        }
+    }
+
     & .info {
         background-color: $color-silk;
         padding: 2rem;
 
-        display: flex;
+        display: none;
         flex-direction: column;
 
         & .author {
             font-size: 2rem;
             font-weight: bold;
+            margin-bottom: 1rem;
         }
 
         & .synopsis {
+            margin-top: 1rem;
             font-size: 1.5rem;
         }
     }
