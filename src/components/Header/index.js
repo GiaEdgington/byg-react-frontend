@@ -11,8 +11,8 @@ const Header = () => {
                         <span>Book List</span>
                         <span className="">7</span>
                     </div>
-                    <div className="signout">
-                        <span className="">Sign Out</span>
+                    <div className="login">
+                        <span className="">Login</span>
                     </div>
                 </nav>
         </header>

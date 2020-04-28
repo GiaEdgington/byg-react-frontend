@@ -4,7 +4,7 @@ import AppContext from '../../contexts/AppContext';
 import Book from '../../components/Book';
 import Header from '../../components/Header';
 
-import styles from './styles.css';
+import styles from './BookLanding.module.scss';
 
 function BookLanding() {
     const { books, findBooks, destination, updateDestination } = useContext(AppContext);
@@ -23,7 +23,7 @@ function BookLanding() {
     return(
         <main>
             <Header />
-            <form className="form">
+            <form className={styles.form}>
                 <label>Your destination:</label><br/>
                 <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
                 <button className="" type="button" value="submit" onClick={findBooks}>Search for Books</button>
