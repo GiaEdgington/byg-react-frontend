@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap');
 
 *,
 *::after,
@@ -15,4 +15,8 @@ html {
 body {
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
