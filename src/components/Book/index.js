@@ -15,10 +15,10 @@ const Book = ({
     isDisplayed,
     onClick
 }) => {
-    console.log(isDisplayed);
+
     return(
         <div className={styles.bookCard}>
-            <h3>{title}</h3>
+            {/* <h3>{title}</h3> */}
             <img src={image} alt={title} />
             <div className={styles.buttons}>
                 <MoreButton 
