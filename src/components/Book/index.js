@@ -7,19 +7,24 @@ import AddButton from '../AddButton';
 import styles from './Book.module.scss';
 
 const Book = ({
+    id,
     title,
     author,
     image,
     synopsis,
-    isDisplayed
+    isDisplayed,
+    onClick
 }) => {
-
+    console.log(isDisplayed);
     return(
         <div className={styles.bookCard}>
             <h3>{title}</h3>
             <img src={image} alt={title} />
             <div className={styles.buttons}>
-                <MoreButton />
+                <MoreButton 
+                onClick={onClick}
+                isDisplayed
+                />
                 {/* when hovered? create overlay with explanation*/}
                 <AddButton />
             </div>
@@ -30,7 +35,7 @@ const Book = ({
                 <span className= {styles.synopsis}>{synopsis}</span>
             </div>
             :
-            ""
+            <div></div>
             }
         </div>
     )
