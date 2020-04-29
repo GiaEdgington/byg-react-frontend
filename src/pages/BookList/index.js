@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import AppContext from '../../contexts/AppContext';
+import Destination from '../../components/Destination';
 
 import styles from './BookList.module.scss';
 
 const BookList = () => {
 
-    return(
-        <main className={styles.container}>
+    const { books, readMore, destination } = useContext(AppContext);
 
-        </main>
+    return(
+        <div className={styles.container}>
+            <Destination
+            destination = {destination}
+            />
+        </div>
     )
 }
 

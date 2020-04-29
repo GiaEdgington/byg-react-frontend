@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
-    const [destination, setDestination] = useState("New York City");
+    const [destination, setDestination] = useState("");
 
     const fetchBooks = async () => {
         try {

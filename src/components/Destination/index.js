@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Destination = () => {
-    return (
-        <main>
+import styles from './Destination.module.scss';
 
-        </main>
+const Destination = ({destination}) => {
+    return (
+        <div className={styles.destinationCard}>
+            <h3>{destination}</h3>
+        </div>
     )
 }
 
