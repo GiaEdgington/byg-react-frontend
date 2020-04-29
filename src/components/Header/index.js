@@ -11,7 +11,7 @@ const Header = () => {
                 <Link to = "/booklist" className="bookList">
                     <span>Book List</span>
                 </Link>
-                <span className="">7</span>
+                <span className={styles.notification}>7</span>
                 <Link to = "/login" className="login">
                     <span className="">Login</span>
                 </Link>

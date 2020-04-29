@@ -1,8 +1,9 @@
 @import '../../sass/base.scss';
 
 .header {
-    height: 9rem;
+    height: 12rem;
     background-image: linear-gradient(145deg, $color-orange 35%, $color-champagne);
+    position: relative;
 
     display: flex;
     justify-content: space-between;
@@ -12,21 +13,40 @@
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-left: 3rem;
+    margin-left: 4rem;
     color: $color-white;
 }
 
 .userNav {
     display: flex;
     align-items: center;
+    font-size: 1.3em;
 
     & > * {
-        padding: 0 2rem;
+        padding: 0 3rem;
         cursor: pointer;
         height: 100%;
         display: flex;
+        align-items: center;
+    }
+
+    & .notification {
+        font-size: 1.8rem;
+        padding: 1.2rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        color: $color-white;
+        background-color: $color-grey;
+        //position on top of link
+        position: absolute;
+        top: 4rem;
+        right: 11rem;
+
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
 } 
