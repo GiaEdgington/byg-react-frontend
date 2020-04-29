@@ -1,10 +1,11 @@
 import React from 'react';
 
+import styles from './BookList.module.scss';
 
 const BookList = () => {
 
     return(
-        <main >
+        <main className={styles.container}>
 
         </main>
     )

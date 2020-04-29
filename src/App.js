@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import useAppContext, { providerPropTypes } from './hooks/useAppContext';
 import AppContext from './contexts/AppContext';
 import BookLanding from './pages/BookLanding';
+import BookList from './pages/BookList';
 
 function App() {
   const appContextValue = useAppContext();
@@ -13,6 +14,9 @@ function App() {
       <Switch>
         <Route path="/search">
           <BookLanding />
+        </Route>
+        <Route path="/booklist">
+          <BookList />
         </Route>
       </Switch>
     </Router>
