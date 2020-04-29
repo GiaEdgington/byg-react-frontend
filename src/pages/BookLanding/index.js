@@ -7,13 +7,13 @@ import Header from '../../components/Header';
 import styles from './BookLanding.module.scss';
 
 function BookLanding() {
-    const { books, findBooks, destination, updateDestination, summary } = useContext(AppContext);
+    const { books, findBooks, updateDestination, readMore } = useContext(AppContext);
 
      const renderBook = (book) => (
         <Book 
         {...book}
-        key={books.indexOf(book)}
-        isDisplayed = {summary}
+        key = {book.id}
+        onClick = {() => readMore(book.id)}
         />
     )
 
@@ -22,6 +22,7 @@ function BookLanding() {
     }
 
     return(
+        
         <main>
             <Header />
             <form className={styles.form}>

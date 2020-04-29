@@ -5,7 +5,6 @@ export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
     const [destination, setDestination] = useState("New York City");
-    const [summary] = useState(false);
 
     const fetchBooks = async () => {
         try {
@@ -22,14 +21,24 @@ export default function useAppContext() {
 
     const updateDestination = (location) => {
        setDestination(location);
-    }
+    };
+
+    const readMore = (bookId)=> {
+        let updateBooks = [...books];
+        updateBooks = updateBooks.map(book => {
+            if(book.id === bookId){
+                book.isDisplayed = !book.isDisplayed;
+            }
+        });
+        setDestination(updateBooks);
+    };
 
     return {
         books,
         findBooks: fetchBooks,
         updateDestination,
         destination,
-        summary
+        readMore
     }
 };
 
