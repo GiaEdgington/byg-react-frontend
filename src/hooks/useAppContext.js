@@ -33,12 +33,35 @@ export default function useAppContext() {
         setDestination(updateBooks);
     };
 
+    const addBook = async (book) => {
+        try{
+            let result = await fetch('http://localhost:3000/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accepts': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: book.id,
+                    title: book.title,
+                    author: book.author,
+                    image: book.image,
+                    synopsis: book.synopsis
+                })
+            })
+            console.log(result);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return {
         books,
         findBooks: fetchBooks,
         updateDestination,
         destination,
-        readMore
+        readMore,
+        addBook
     }
 };
 
