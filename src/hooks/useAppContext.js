@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
-    const [destination, setDestination] = useState("");
+    const [destination, setDestination] = useState({setting: "", books: []});
 
     const fetchBooks = async () => {
         try {
-            let result = await fetch(`http://localhost:3000/books?destination=${destination}`);
+            let result = await fetch(`http://localhost:3000/books?destination=${destination.setting}`);
             let resJson = await result.json();
             setBooks(resJson);
         } catch (err) {
@@ -20,7 +20,7 @@ export default function useAppContext() {
     }, []);
 
     const updateDestination = (location) => {
-       setDestination(location);
+       setDestination({ setting: location});
     };
 
     const readMore = (bookId)=> {

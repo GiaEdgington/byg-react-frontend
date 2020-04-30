@@ -12,7 +12,7 @@ const BookList = () => {
     return(
         <div className={styles.container}>
             <Destination
-            destination = {destination}
+            destination = {destination.setting}
             />
         </div>
     )
