@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../contexts/AppContext';
+
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
+    const { destinationNum } = useContext(AppContext);
+
+    //console.log(destinationNum);
 
     return (
         <header className={styles.header}>
@@ -11,7 +17,7 @@ const Header = () => {
                 <Link to = "/booklist" className="bookList">
                     <span>Book List</span>
                 </Link>
-                <span className={styles.notification}>7</span>
+                <span className={styles.notification}>{destinationNum}</span>
                 <Link to = "/login" className="login">
                     <span className="">Login</span>
                 </Link>
