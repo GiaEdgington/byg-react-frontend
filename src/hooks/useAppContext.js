@@ -12,6 +12,7 @@ export default function useAppContext() {
             let result = await fetch(`http://localhost:3000/books?destination=${destination.setting}`);
             let resJson = await result.json();
             setBooks(resJson);
+            setReload(!reload);
         } catch (err) {
             console.log(err);
         }
