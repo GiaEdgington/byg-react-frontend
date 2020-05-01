@@ -5,6 +5,7 @@ export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
     const [destination, setDestination] = useState({setting: "", books: []});
+    const [reload, setReload] = useState(false);
 
     const fetchBooks = async () => {
         try {
@@ -64,7 +65,8 @@ export default function useAppContext() {
                     location: locationId
                 })
             })
-            console.log(result);
+            //console.log(result);
+            setReload(!reload);
         } catch (err) {
             console.log(err);
         } 
