@@ -18,18 +18,20 @@ const Book = ({
 }) => {
 
     return(
-        <div className={styles.bookCard}>
-            {/* <h3>{title}</h3> */}
-            <img src={image} alt={title} />
-            <div className={styles.buttons}>
-                <MoreButton 
-                onClickMore={onClickMore}
-                isDisplayed
-                />
-                {/* when hovered? create overlay with explanation*/}
-                <AddButton
-                onClickAdd={onClickAdd} 
-                />
+        <div>
+            <div className={styles.bookCard}>
+                {/* <h3>{title}</h3> */}
+                <img src={image} alt={title} />
+                <div className={styles.buttons}>
+                    <MoreButton 
+                    onClickMore={onClickMore}
+                    isDisplayed
+                    />
+                    {/* when hovered? create overlay with explanation*/}
+                    <AddButton
+                    onClickAdd={onClickAdd} 
+                    />
+                </div>
             </div>
             { isDisplayed ? 
             <div className= {styles.info}>

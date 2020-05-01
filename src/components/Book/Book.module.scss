@@ -3,19 +3,13 @@
 
 .bookCard {
     width: 250px;
-    height: auto;
+    height: 360px;
     padding: 0.5em;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
-    & h3 {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
 
     & img {
         width: 200px;
@@ -23,18 +17,15 @@
 
     & .buttons {
         width: 200px;
-        justify-content: space-between;
         margin-top: 1rem;
-        
         background-color: $color-grey;
         
-        
+         
         & button {
             font-size: 1.5rem;
             font-weight: bold;
             color: $color-white;
             padding: 1rem 1.5rem;
-            align-self: flex-end;
         }
     }
 
