@@ -60,6 +60,8 @@ export default function useAppContext() {
                 })
            })
            let locationJson = await location.json();
+
+           fetchNum();
   
            const locationId = locationJson.id;
            
