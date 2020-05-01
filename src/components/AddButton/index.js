@@ -1,13 +1,16 @@
 import React from 'react';
 
 
-const AddButton = () => {
-
+const AddButton = ({onClickAdd}) => {
     return (
-
         //make call to backend to create destination/add book
-        <button type="button">Add Book</button>
+        <button 
+        type="button"
+        onClick = {onClickAdd}
+        >
+        Add Book
+        </button>
     )
-}
+};
 
 export default AddButton;

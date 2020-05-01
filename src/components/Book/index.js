@@ -13,7 +13,8 @@ const Book = ({
     image,
     synopsis,
     isDisplayed,
-    onClick
+    onClickMore,
+    onClickAdd
 }) => {
 
     return(
@@ -22,11 +23,13 @@ const Book = ({
             <img src={image} alt={title} />
             <div className={styles.buttons}>
                 <MoreButton 
-                onClick={onClick}
+                onClickMore={onClickMore}
                 isDisplayed
                 />
                 {/* when hovered? create overlay with explanation*/}
-                <AddButton />
+                <AddButton
+                onClickAdd={onClickAdd} 
+                />
             </div>
             { isDisplayed ? 
             <div className= {styles.info}>

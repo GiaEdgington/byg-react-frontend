@@ -13,16 +13,16 @@ function BookLanding() {
         <Book 
         {...book}
         key = {book.id}
-        onClick = {() => readMore(book.id)}
+        onClickMore = { () => readMore(book.id)}
+        onClickAdd = { () => addBook(book) }
         />
-    )
+    );
 
     const handleChange = (location) => {
         updateDestination(location);
-    }
+    };
 
     return(
-        
         <main>
             <Header />
             <form className={styles.form}>
