@@ -34,8 +34,7 @@ export default function useAppContext() {
     };
 
     const addBook = async (book) => {
-        //console.log(book);
-       try{
+       try {
            let location = await fetch('http://localhost:3000/destination', {
                 method: 'POST',
                 headers: {
@@ -47,11 +46,10 @@ export default function useAppContext() {
                     books: []
                 })
            })
-           console.log(location)
-
-           let locationId = location._id;
-
-            let result = await fetch('http://localhost:3000/book', {
+           let locationJson = await location.json();
+           const locationId = locationJson.id;
+           
+           let result = await fetch('http://localhost:3000/book', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
