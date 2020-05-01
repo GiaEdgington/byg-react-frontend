@@ -33,8 +33,9 @@ export default function useAppContext() {
         setDestination(updateBooks);
     };
 
-    const addBook = async (book) => {
-        try{
+    const addBook = (book) => {
+        console.log('clicked');
+  /*       try{
             let result = await fetch('http://localhost:3000/book', {
                 method: 'POST',
                 headers: {
@@ -52,7 +53,7 @@ export default function useAppContext() {
             console.log(result);
         } catch (err) {
             console.log(err);
-        }
+        } */
     };
 
     return {
