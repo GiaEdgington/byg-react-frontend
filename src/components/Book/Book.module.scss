@@ -28,25 +28,27 @@
             padding: 1rem 1.5rem;
         }
     }
+}
 
-    & .info {
-        background-color: $color-silk;
-        padding: 2rem;
-        height: 300px;
-        overflow: scroll;
+.info {
+    width: 250px;
+    background-color: $color-silk;
+    padding: 1.5rem;
+    max-height: 350px;
+    overflow: scroll;
+    text-align: justify;
 
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-        & .author {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
+    & .author {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
 
-        & .synopsis {
-            margin-top: 1rem;
-            font-size: 1.5rem;
-        }
+    & .synopsis {
+        margin-top: 1rem;
+        font-size: 1.5rem;
     }
 }
