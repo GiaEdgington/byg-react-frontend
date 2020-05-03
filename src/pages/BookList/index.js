@@ -13,6 +13,7 @@ const BookList = () => {
         <div className={styles.container}>
             <Destination
             destination = {destination.setting}
+            books = {books}
             />
         </div>
     )

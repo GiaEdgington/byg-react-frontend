@@ -1,12 +1,25 @@
 import React from 'react';
+import BookCard from '../BookCard';
 
 import styles from './Destination.module.scss';
 
-const Destination = ({destination}) => {
+const Destination = ({destination, books}) => {
+
+    const renderCard = (book) => (
+        <BookCard
+
+        />
+    );
+
     return (
-        <div className={styles.destinationCard}>
-            <h3>{destination}</h3>
-        </div>
+        <container className={styles.container}>
+            <div className={styles.destinationCard}>
+                <h3>{destination}</h3>
+                <div>
+                    {[...books].map(book => renderCard(book))}
+                </div>
+            </div>
+        </container>
     )
 }
 
