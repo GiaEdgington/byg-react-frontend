@@ -7,8 +7,9 @@ import styles from './BookList.module.scss';
 
 const BookList = () => {
 
-    const { books, readMore, destination } = useContext(AppContext);
+    const { books, readMore, destination, savedBooks } = useContext(AppContext);
 
+    console.log(savedBooks.books.length);
     return(
         <div className={styles.container}>
             <Destination

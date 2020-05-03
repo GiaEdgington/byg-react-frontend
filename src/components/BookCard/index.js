@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BookCard = () => {
+const BookCard = (book, destination) => {
     return (
-        <div>
-            
+        <div>     
+            <img>{book.image}</img>
         </div>
     )
 };
