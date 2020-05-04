@@ -3,15 +3,12 @@ import BookCard from '../BookCard';
 
 import styles from './Destination.module.scss';
 
-const Destination = ({destination, books}) => {
+const Destination = ({destination, savedBooks}) => {
 
-    console.log('test:' + destination);
     const renderCard = (book) => (
-        //console.log(book.location);
-        //console.log(destination);
-
             <BookCard
             {...book}
+            key={book.id}
             image = {book.image}
             destination = {destination}
             />
@@ -22,7 +19,7 @@ const Destination = ({destination, books}) => {
             <div className={styles.destinationCard}>
                 <h3>{destination}</h3>
                 <div>
-                    {[...books].map(book => renderCard(book))}
+                    {[...savedBooks.books].map(book => renderCard(book))}
                 </div>
             </div>
         </div>

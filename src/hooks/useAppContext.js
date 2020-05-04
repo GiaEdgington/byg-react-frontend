@@ -6,7 +6,7 @@ export default function useAppContext() {
     const [books, setBooks] = useState([]);
     const [destination, setDestination] = useState({setting: "", books: []});
     const [destinationNum, setNum] = useState(0);
-    const [savedBooks, fetchSavedBooks] = useState({});
+    const [savedBooks, fetchSavedBooks] = useState([]);
     const [reload, setReload] = useState(false);
 
     const fetchBooks = async () => {

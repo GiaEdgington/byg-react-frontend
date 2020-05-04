@@ -9,12 +9,12 @@ const BookList = () => {
 
     const { books, readMore, destination, savedBooks } = useContext(AppContext);
 
-    console.log(savedBooks.books.length);
     return(
         <div className={styles.container}>
             <Destination
+            key= {destination}
             destination = {destination.setting}
-            books = {books}
+            savedBooks = {savedBooks}
             />
         </div>
     )
