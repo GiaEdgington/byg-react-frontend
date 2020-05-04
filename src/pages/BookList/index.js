@@ -7,15 +7,21 @@ import styles from './BookList.module.scss';
 
 const BookList = () => {
 
-    const { books, readMore, destination, savedBooks } = useContext(AppContext);
+    const { books, readMore, savedDestinations, savedBooks } = useContext(AppContext);
+
+    const settings = savedDestinations.settings;
+
+    const myDestinations = settings.map(destination => {
+        return <Destination
+        //key= {destination}
+        destination = {destination}
+        savedBooks = {savedBooks}
+        />
+    })
 
     return(
         <div className={styles.container}>
-            <Destination
-            key= {destination}
-            destination = {destination.setting}
-            savedBooks = {savedBooks}
-            />
+            {myDestinations}
         </div>
     )
 }
