@@ -31,7 +31,8 @@ export default function useAppContext() {
 
     useEffect(() => {
         //fetchBooks();
-      fetchNum();
+        getSavedBooks();
+        fetchNum();
     }, [destinationNum]);
 
     const updateDestination = (location) => {
@@ -82,7 +83,6 @@ export default function useAppContext() {
                     location: locationId
                 })
             })
-            getSavedBooks();
             console.log(result);
             setReload(!reload);
         } catch (err) {
