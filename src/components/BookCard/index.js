@@ -2,8 +2,8 @@ import React from 'react';
 
 const BookCard = (book, destination) => {
     return (
-        <div>     
-            <img>{book.image}</img>
+        <div>
+            <img src={book.image}></img>
         </div>
     )
 };
