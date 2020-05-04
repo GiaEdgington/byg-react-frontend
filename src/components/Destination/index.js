@@ -14,6 +14,8 @@ const Destination = ({destination, savedBooks}) => {
             />
     );
 
+    //const bookArr = [...savedBooks.books].filter(book => book.location === destination.destinationId);
+    
     return (
         <div className={styles.container}>
             <div className={styles.destinationCard}>

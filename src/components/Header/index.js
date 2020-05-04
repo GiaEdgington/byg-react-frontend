@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-    const { destinationNum } = useContext(AppContext);
-
-    //console.log(destinationNum);
+    const { savedDestinations } = useContext(AppContext);
 
     return (
         <header className={styles.header}>
@@ -17,7 +15,7 @@ const Header = () => {
                 <Link to = "/booklist" className="bookList">
                     <span>Book List</span>
                 </Link>
-                <span className={styles.notification}>{destinationNum}</span>
+                <span className={styles.notification}>{savedDestinations.totalDestinations}</span>
                 <Link to = "/login" className="login">
                     <span className="">Login</span>
                 </Link>
