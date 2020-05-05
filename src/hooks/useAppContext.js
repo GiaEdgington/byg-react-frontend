@@ -5,9 +5,8 @@ export default function useAppContext() {
 
     const [books, setBooks] = useState([]);
     const [destination, setDestination] = useState({setting: "", books: []});
-    //const [destinationNum, setNum] = useState(0);
     const [savedBooks, fetchSavedBooks] = useState([]);
-    const [savedDestinations, fetchSavedDestinations] = useState({settings: [], destinationId: ""})
+    const [savedDestinations, fetchSavedDestinations] = useState({settings: [], destinationId: ""});
     const [reload, setReload] = useState(false);
 
     const fetchBooks = async () => {
@@ -41,12 +40,6 @@ export default function useAppContext() {
     const updateDestination = (location) => {
        setDestination({ setting: location});
     };
-
-    /* const getDestination = (destinationId) => {
-        fetch(`http://localhost:3000/destination/${destinationId}`)
-        .then(result => result.json())
-        .then(console.log())
-    } */
 
     const readMore = (bookId)=> {
         let updateBooks = [...books];
@@ -112,8 +105,7 @@ export default function useAppContext() {
         addBook,
         savedDestinations,
         getSavedBooks,
-        savedBooks,
-        //getDestination
+        savedBooks
     }
 };
 

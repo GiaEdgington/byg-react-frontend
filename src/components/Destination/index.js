@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BookCard from '../BookCard';
 
 import styles from './Destination.module.scss';
 
-const Destination = () => {
+const Destination = (destination) => {
+    
+    const [destinationBooks, setBooks] = useState([]);
 
-    const renderCard = (book) => (
+        const getDestination = async (destination) => {
+        
+            let destinationId = destination.destinationId;
+        //console.log(destinationId);
+            try {
+                let result = await fetch(`http://localhost:3000/destination/${destinationId}`);
+                let resultJson = await result.json();
+                setBooks(resultJson.destination.books);
+            } catch (err) {
+                console.log(err);
+            }
+    };
+
+    useEffect(() => {  
+        getDestination(destination);
+    }, []);
+
+    const getBooks = (book) =>  (
             <BookCard
             {...book}
             key={book.id}
+            title={book.title}
             image = {book.image}
-            />
-    );
-
-
-
-    const getBooks = () =>  (
-            <BookCard
-            //{...book}
-            //key={book.id}
-            //image = {book.image}
-            //getDestination = {getDestination}
             />
         )
 
@@ -31,7 +40,8 @@ const Destination = () => {
             <div className={styles.destinationCard}>
                 {/* <h3>{destination.books}</h3> */}
                 <div>
-                    {/* {[...savedBooks.books].map(book => renderCard(book))} */}
+                    {destinationBooks}
+                    {/* {[...destinationBooks].map(book => getBooks(book))} */}
                 </div>
             </div>
         </div>

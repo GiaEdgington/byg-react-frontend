@@ -7,33 +7,21 @@ import styles from './BookList.module.scss';
 
 const BookList = () => {
 
-    const { books, readMore, savedDestinations, savedBooks } = useContext(AppContext);
-
-    const settings = savedDestinations.settings;
+    const {savedDestinations} = useContext(AppContext);
 
     const destinationIds = [...savedDestinations.destinationId].map(destinationId => destinationId);
 
-    const destinationBooks = () => {
-        let bookIds;
-        destinationIds.forEach(destinationId => {
-            fetch(`http://localhost:3000/destination/${destinationId}`)
-            .then(result => result.json())
-            .then(data => {
-                bookIds = data.destination.books;
-            })
-        })
-        return (
-            <Destination
-            key = {bookIds}
-            bookIds = {bookIds}
-            />
-        ) 
-    }
+    
+    const renderDestination = (destinationId) => (
+        <Destination
+        key= {destinationId}
+        destinationId = {destinationId}
+        />
+    )
 
     return(
         <div className={styles.container}>
-           {destinationBooks()}
-            {/* {[...savedDestinations.destinationId].map(destinationId => renderDestination(destinationId))} */}
+         {destinationIds.map(destinationId => renderDestination(destinationId))} 
         </div>
     )
 }
