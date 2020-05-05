@@ -3,25 +3,35 @@ import BookCard from '../BookCard';
 
 import styles from './Destination.module.scss';
 
-const Destination = ({destination, savedBooks}) => {
+const Destination = () => {
 
     const renderCard = (book) => (
             <BookCard
             {...book}
             key={book.id}
             image = {book.image}
-            destination = {destination}
             />
     );
 
-    //const bookArr = [...savedBooks.books].filter(book => book.location === destination.destinationId);
+
+
+    const getBooks = () =>  (
+            <BookCard
+            //{...book}
+            //key={book.id}
+            //image = {book.image}
+            //getDestination = {getDestination}
+            />
+        )
+
+    //console.log(getBooks);
     
     return (
         <div className={styles.container}>
             <div className={styles.destinationCard}>
-                <h3>{destination}</h3>
+                {/* <h3>{destination.books}</h3> */}
                 <div>
-                    {[...savedBooks.books].map(book => renderCard(book))}
+                    {/* {[...savedBooks.books].map(book => renderCard(book))} */}
                 </div>
             </div>
         </div>

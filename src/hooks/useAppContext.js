@@ -7,7 +7,7 @@ export default function useAppContext() {
     const [destination, setDestination] = useState({setting: "", books: []});
     //const [destinationNum, setNum] = useState(0);
     const [savedBooks, fetchSavedBooks] = useState([]);
-    const [savedDestinations, fetchSavedDestinations] = useState({settings: [], totalDestinations: 0})
+    const [savedDestinations, fetchSavedDestinations] = useState({settings: [], destinationId: ""})
     const [reload, setReload] = useState(false);
 
     const fetchBooks = async () => {
@@ -23,13 +23,14 @@ export default function useAppContext() {
     };
 
     const getSavedDestinations = async () => {
-        let result = await fetch('http://localhost:3000/destinations')
+        let result = await fetch('http://localhost:3000/destinations');
         let resultJson = await result.json();
-        let total = resultJson.totalDestinations;
+        //let total = resultJson.totalDestinations;
         let settings = resultJson.destinations;
-        fetchSavedDestinations({ settings: settings, totalDestinations: total });
+        let destinationId = resultJson.destinationId;
+        fetchSavedDestinations({ settings: settings, destinationId: destinationId });
     };
-    //fetchBooks with location
+    
 
     useEffect(() => {
         //fetchBooks();
@@ -40,6 +41,12 @@ export default function useAppContext() {
     const updateDestination = (location) => {
        setDestination({ setting: location});
     };
+
+    /* const getDestination = (destinationId) => {
+        fetch(`http://localhost:3000/destination/${destinationId}`)
+        .then(result => result.json())
+        .then(console.log())
+    } */
 
     const readMore = (bookId)=> {
         let updateBooks = [...books];
@@ -105,7 +112,8 @@ export default function useAppContext() {
         addBook,
         savedDestinations,
         getSavedBooks,
-        savedBooks
+        savedBooks,
+        //getDestination
     }
 };
 
