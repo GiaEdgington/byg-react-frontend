@@ -1,10 +1,12 @@
 import React from 'react';
 
-const BookCard = (book, destination) => {
-    //console.log(book);
+const BookCard = ({getDestination}) => {
+
+    let result = {getDestination};
+     console.log(result);
     return (
         <div>
-            <img src={book.image}></img>
+            {/* <img src={book.image}></img> */}
         </div>
     )
 };
