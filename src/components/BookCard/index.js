@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../contexts/AppContext';
 
 const BookCard = (books) => {
 
-     //console.log(books);
+    const {savedBooks} = useContext(AppContext);
+
+    const destinationBooks = books.books;
+    
+
     return (
         <div>
-            {books.books}
+            {destinationBooks}
         </div>
     )
 };
