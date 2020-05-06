@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import AppContext from '../../contexts/AppContext';
 import Destination from '../Destination';
 
-const BookCard = (books) => {
-    const [book, fetchBook] = useState({});
+const BookCard = (book) => {
+    //const [book, fetchBook] = useState({});
 
-    useEffect(() => {  
-        const destinationBooks = books.books;
-        function getBook(destinationBooks) {
+  /*   useEffect(() => {  
+        function getBook(book) {
             destinationBooks.map(bookId => {
                 let result = fetch(`http://localhost:3000/book/${bookId}`);
                 let resultJson = result.json();
@@ -18,11 +17,11 @@ const BookCard = (books) => {
         return function cleanup() {
             Destination.unsubscribeToBooks(books, getBook);
         };
-    }, []);
+    }, []); */
 
     return (
         <div>
-            {console.log(book)}
+            {/* {console.log(book.book)} */}
             {/* {console.log(book.title)} */}
         </div>
     )
