@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import AppContext from '../../contexts/AppContext';
+import Destination from '../Destination';
 
 const BookCard = (books) => {
-
     const [book, fetchBook] = useState({});
 
-    const destinationBooks = books.books;
-
-    const getBook = async (bookId) => {
-        try {
-            let result = await fetch(`http://localhost:3000/book/${bookId}`);
-            let resultJson = await result.json();
-            fetchBook(resultJson.book);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
     useEffect(() => {  
-        destinationBooks.map(bookId => {
-            getBook(bookId)
-        }); 
+        const destinationBooks = books.books;
+        function getBook(destinationBooks) {
+            destinationBooks.map(bookId => {
+                let result = fetch(`http://localhost:3000/book/${bookId}`);
+                let resultJson = result.json();
+                fetchBook(resultJson.book);
+            })
+        }
+        Destination.subscribeToBooks(books, getBook);
+        return function cleanup() {
+            Destination.unsubscribeToBooks(books, getBook);
+        };
     }, []);
 
     return (
         <div>
             {console.log(book)}
+            {/* {console.log(book.title)} */}
         </div>
     )
 };
