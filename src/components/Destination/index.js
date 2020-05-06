@@ -6,27 +6,32 @@ import styles from './Destination.module.scss';
 const Destination = (destination) => {
     
     const [destinationBooks, setBooks] = useState([]);
-    const [books, fetchBooks] = useState({});
 
-    const getDestination = async (destination) => {
-    
+    const getDestinationBooks = async (destination) => {
         let destinationId = destination.destinationId;
+        let bookArr = [];
+        let bookData =[];
     //console.log(destinationId);
         try {
             let result = await fetch(`http://localhost:3000/destination/${destinationId}`);
             let resultJson = await result.json();
-            setBooks(resultJson.destination.books);
+            bookArr.push(resultJson.destination.books);
+
+            await Promise.all(bookArr.map(async (bookId) => {
+                let result = await fetch(`http://localhost:3000/book/${bookId}`);
+                let resultJson = await result.json();
+
+                bookData.push(resultJson);
+                
+                setBooks(bookData);
+            }))
         } catch (err) {
             console.log(err);
         }
     };
 
-    // const getBooks = async (destinationBooks) => {
-
-    // };
-
     useEffect(() => {  
-        getDestination(destination);
+        getDestinationBooks(destination);
     }, []);
 
     const getBooks = destinationBooks.map(book => {
