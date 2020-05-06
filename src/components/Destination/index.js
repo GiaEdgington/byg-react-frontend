@@ -24,24 +24,20 @@ const Destination = (destination) => {
         getDestination(destination);
     }, []);
 
-    const getBooks = (book) =>  (
+    const getBooks = (books) =>  (
             <BookCard
-            {...book}
-            key={book.id}
-            title={book.title}
-            image = {book.image}
+            {...books}
+            key={books.length}
+            books={books}
             />
         )
 
-    //console.log(getBooks);
-    
     return (
         <div className={styles.container}>
             <div className={styles.destinationCard}>
                 {/* <h3>{destination.books}</h3> */}
                 <div>
-                    {destinationBooks}
-                    {/* {[...destinationBooks].map(book => getBooks(book))} */}
+                    {getBooks(destinationBooks)}
                 </div>
             </div>
         </div>
