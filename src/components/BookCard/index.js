@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from './BookCard.module.scss';
 
 const BookCard = (book) => {
 
@@ -14,7 +15,7 @@ const BookCard = (book) => {
         )
     })
     return (
-        <div>
+        <div className = {styles.book}>
             {displayBook}
         </div>
     )
