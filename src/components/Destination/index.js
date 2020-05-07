@@ -4,7 +4,7 @@ import BookCard from '../BookCard';
 import styles from './Destination.module.scss';
 
 const Destination = (destination) => {
-    
+    //console.log(destination);
     const [destinationBooks, setBooks] = useState([]);
 
     const getDestinationBooks = async (destination) => {
@@ -29,7 +29,7 @@ const Destination = (destination) => {
     const getBook = (book) => (
             <BookCard
             {...book}
-            key={book._id}
+            key={book[0]._id}
             book={book}
             />
     );
