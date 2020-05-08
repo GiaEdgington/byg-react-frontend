@@ -5,7 +5,7 @@ import styles from './Destination.module.scss';
 
 const Destination = (destination) => {
     //console.log(destination);
-    const [destinationBooks, setBooks] = useState([]);
+    const [destinationData, setBooks] = useState({ books: [], location: ""});
 
     const getDestinationBooks = async (destination) => {
 
@@ -16,7 +16,7 @@ const Destination = (destination) => {
             let result = await fetch(`http://localhost:3000/destination/${destinationId}`);
             let resultJson = await result.json();
             bookArr.push(resultJson.books);
-            setBooks(bookArr);
+            setBooks({books: bookArr, location: resultJson.location});
         } catch (err) {
             console.log(err);
         }
@@ -35,10 +35,11 @@ const Destination = (destination) => {
     );
     return (
         <div>
-            {/* Set location on state: <h3>{destination.location}</h3> */}
+            <h3>{destinationData.location}</h3>
             <div className={styles.destinationCard}>
+                <h2>{}</h2>
                 <div>
-                    {[...destinationBooks].map(book => getBook(book))}
+                    {[...destinationData.books].map(book => getBook(book))}
                 </div>
             </div>
         </div>
