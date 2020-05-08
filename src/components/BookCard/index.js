@@ -15,7 +15,7 @@ const BookCard = (book) => {
         )
     })
     return (
-        <div>
+        <div className={styles.bookContainer}>
             {displayBook}
         </div>
     )

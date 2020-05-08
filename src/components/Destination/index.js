@@ -35,8 +35,8 @@ const Destination = (destination) => {
     );
     return (
         <div>
+            {/* Set location on state: <h3>{destination.location}</h3> */}
             <div className={styles.destinationCard}>
-                {/* <h3>{destination.books}</h3> */}
                 <div>
                     {[...destinationBooks].map(book => getBook(book))}
                 </div>
