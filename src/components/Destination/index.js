@@ -34,7 +34,7 @@ const Destination = (destination) => {
             />
     );
     return (
-        <div className={styles.container}>
+        <div>
             <div className={styles.destinationCard}>
                 {/* <h3>{destination.books}</h3> */}
                 <div>

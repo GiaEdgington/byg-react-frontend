@@ -9,13 +9,13 @@ const BookCard = (book) => {
     const displayBook = bookArr.map((book) => {
         //console.log(book);
         return (
-            <div key={book._id}>
+            <div key={book._id} className = {styles.book}>
                 <h3>{book.title}</h3>
             </div>
         )
     })
     return (
-        <div className = {styles.book}>
+        <div>
             {displayBook}
         </div>
     )
