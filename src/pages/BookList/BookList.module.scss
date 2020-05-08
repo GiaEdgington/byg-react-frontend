@@ -1,4 +1,6 @@
 .container {
-    width: 80%;
-    border: 1px red solid;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
