@@ -1,14 +1,15 @@
 @import '../../sass/base.scss';
 
 .bookContainer {
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    padding: 0 1.2rem;
+
+    display: flex;
+    align-items: flex-start;
 }
 
 .book {
-    width: 150px;
     padding: 1.5rem 0;
 
     display: flex;
