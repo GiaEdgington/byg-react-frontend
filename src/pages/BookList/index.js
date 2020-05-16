@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../../contexts/AppContext';
+import Header from '../../components/Header';
 import Destination from '../../components/Destination';
+
 
 import styles from './BookList.module.scss';
 
@@ -20,8 +22,11 @@ const BookList = () => {
     )
 
     return(
-        <div className={styles.container}>
-         {destinationIds.map(destinationId => renderDestination(destinationId))} 
+        <div>
+            <Header />
+            <div className={styles.container}>
+            {destinationIds.map(destinationId => renderDestination(destinationId))} 
+            </div>
         </div>
     )
 }
