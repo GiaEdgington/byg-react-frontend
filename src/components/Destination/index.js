@@ -34,14 +34,11 @@ const Destination = (destination) => {
             />
     );
     return (
-        <div>
-            <h3>{destinationData.location}</h3>
-            <div className={styles.destinationCard}>
-                <h2>{}</h2>
+        <div className={styles.destinationCard}>
+            <h2 className={styles.destination}>{destinationData.location}</h2>
                 <div>
                     {[...destinationData.books].map(book => getBook(book))}
                 </div>
-            </div>
         </div>
     )
 }
