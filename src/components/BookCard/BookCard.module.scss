@@ -4,9 +4,13 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 3rem;
 }
 
 .book {
-    border: 1px black solid;
     width: 150px;
+    padding: 1.5rem 0;
+
+    display: flex;
+    flex-direction: column;
 }
