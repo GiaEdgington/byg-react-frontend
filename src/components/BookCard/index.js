@@ -11,6 +11,7 @@ const BookCard = (book) => {
         return (
             <div key={book._id} className = {styles.book}>
                 <h3>{book.title}</h3>
+                <img src={book.image}></img>
             </div>
         )
     })
