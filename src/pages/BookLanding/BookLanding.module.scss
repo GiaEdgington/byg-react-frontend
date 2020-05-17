@@ -38,9 +38,14 @@ h1 {
 }
 
 
-.container {
-    width: 100%;
+.main {
     display: flex;
+    height: 100vh;
     justify-content: center;
-    padding: 0 10rem;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
 }

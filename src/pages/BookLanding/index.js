@@ -23,18 +23,20 @@ function BookLanding() {
     };
 
     return(
-        <main>
+        <div>
             <Header />
             <form className={styles.form}>
                 <label>Your destination:</label><br/>
                 <input type="text" placeholder="" name="destination" onChange={(e) => handleChange(e.target.value)}/><br/>
                 <button type="button" value="submit" onClick={findBooks}>Search for Books</button>
             </form>
-            <div className={styles.container}>
-                 {/* <h1>Books set in {destination}</h1> */}
-                { [...books].map( b => renderBook(b) )}
-            </div>
-        </main> 
+            <div className={styles.main}>
+                <div className={styles.container}>
+                    {/* <h1>Books set in {destination}</h1> */}
+                    { [...books].map( b => renderBook(b) )}
+                </div>
+            </div> 
+        </div>
     )
 }
 
