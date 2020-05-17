@@ -8,7 +8,7 @@ const AddButton = ({onClickAdd}) => {
         type="button"
         onClick = {onClickAdd}
         >
-        Add Book
+        Save
         </button>
     )
 };
