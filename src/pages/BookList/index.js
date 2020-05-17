@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import AppContext from '../../contexts/AppContext';
 import Header from '../../components/Header';
@@ -22,9 +23,14 @@ const BookList = () => {
     )
 
     return(
-        <div>
+        <div className={styles.container}>
             <Header />
-            <div className={styles.container}>
+            <div className={styles.backbtn}>
+                <Link to = "/search">
+                    <span>Go Back</span>
+                </Link>
+            </div>
+            <div className={styles.containerList}>
             {destinationIds.map(destinationId => renderDestination(destinationId))} 
             </div>
         </div>

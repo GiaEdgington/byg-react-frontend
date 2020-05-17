@@ -1,8 +1,22 @@
 .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerList {
     height: 100vh;
     padding: 0 10rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.backbtn {
+    align-self: flex-end;
+    margin: 2rem 3.5rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: inline-block;
 }
