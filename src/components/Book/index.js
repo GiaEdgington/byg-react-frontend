@@ -24,11 +24,13 @@ const Book = ({
                 <img src={image} alt={title} />
                 <div className={styles.buttons}>
                     <MoreButton 
+                    className={styles.buttons}
                     onClickMore={onClickMore}
                     isDisplayed
                     />
                     {/* when hovered? create overlay with explanation*/}
                     <AddButton
+                    className={styles.buttons}
                     onClickAdd={onClickAdd} 
                     />
                 </div>
