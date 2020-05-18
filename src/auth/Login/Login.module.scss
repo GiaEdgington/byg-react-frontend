@@ -6,35 +6,37 @@
 }
 
 .signin .form {
-    width: 90rem;
-    height: 50rem;
-    padding: 15rem;
-    border: 1px gray solid;
+    //width: 90rem;
+    //height: 50rem;
+    //padding: 15rem;
+    //border: 1px gray solid;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 
     & label {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 
     & input {
-        padding: 1.3rem;
+        padding: 1.3rem 7rem;
         margin-bottom: 2rem;
         border: 2px gray solid;
+        text-align: center;
     }
 
     & .btnlogin {
-        padding: 1.3rem;
+        padding: 1.3rem 7rem;
         background-color: greenyellow;
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 700;
         border: none;
         margin-bottom: 4rem;
     }
-
+ 
     & span {
         font-size: 1.2rem;
         text-align: center;
@@ -45,6 +47,7 @@
         border: none;
         font-size: 1.5rem;
         font-weight: 700;
+        background-color: white;
         border-bottom: 1px solid currentColor;
         cursor: pointer;
 

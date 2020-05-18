@@ -29,10 +29,12 @@ button {
     outline: none;
 }
 
+//Change Chrome autocomplete styles
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
   border: 1px solid gray;
+  box-shadow: 0 0 0px 1000px #fff inset;
   -webkit-text-fill-color: gray;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   transition: background-color 5000s ease-in-out 0s;
