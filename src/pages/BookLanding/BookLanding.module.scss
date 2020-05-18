@@ -5,13 +5,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    //margin: 20rem auto;
     font-size: 2em;
+
+    @include large {
+        margin-top: 20rem;
+    }
 
     & label {
         margin-bottom: -3rem;
         font-size: 1.7rem;
+
+        @include large {
+            font-size: 2.5rem;
+            margin-bottom: -2rem;
+        }
     }
 
     & input  {
@@ -19,10 +26,16 @@
         font-size: inherit;
         color: inherit;
         border: 1px $color-grey solid;
-        padding: 1rem 15rem;
+        padding: .7rem 2rem;
+        width: 80%;
         border-radius: 100px;
-        width: 20%;
         transition: all .2s;
+        text-align: center;
+
+        @include large {
+            width: 25%;
+            padding: 2.5rem;
+        }
     }
 
     & button {
@@ -32,6 +45,12 @@
         background-color: $color-grey;
         color: $color-white;
         font-size: 1.3rem;
+
+        @include large {
+            margin-top: 0;
+            padding: 2rem 3rem;
+            font-size: 2rem;
+        }
     }
 }
 
