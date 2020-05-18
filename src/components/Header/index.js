@@ -19,7 +19,7 @@ const Header = () => {
                 </Link>
                 <span className={styles.notification}>{savedDestinations.settings.length}</span>
                 <Link to = "/login" className="login">
-                    <span className="">Login</span>
+                    <span className="">SignIn</span>
                 </Link>
             </nav>
         </header>

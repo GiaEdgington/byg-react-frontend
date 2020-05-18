@@ -5,7 +5,7 @@ import useAppContext, { providerPropTypes } from './hooks/useAppContext';
 import AppContext from './contexts/AppContext';
 import BookLanding from './pages/BookLanding';
 import BookList from './pages/BookList';
-import Login from './auth/Login';
+import SignIn from './auth/Login';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <BookList />
         </Route>
         <Route path="/login">
-          <Login />
+          <SignIn />
         </Route>
       </Switch>
     </Router>
