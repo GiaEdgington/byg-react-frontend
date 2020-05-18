@@ -8,24 +8,38 @@
 
     display: flex;
     flex-direction: column;
-    //justify-content: space-between;
     //align on the y axis
     align-items: center;
     font-size: 1.5rem;
+
+    @include large {
+        height: 12rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 h2 {
     font-size: 3rem;
     font-weight: 600;
     padding: 3rem 0;
-    //margin-left: 4rem;
     color: $color-white;
+
+    @include large {
+        font-size: 3.5rem;
+        margin-left: 4rem;
+    }
 }
 
 .userNav {
     display: flex;
     align-items: center;
     font-size: 1.3em;
+
+    @include large {
+        font-size: 2rem;
+        margin-right: 3rem;
+    }
 
     & > * {
         padding: 0 3rem;
@@ -47,6 +61,11 @@ h2 {
         position: absolute;
         top: 11.5rem;
         right: 17.9rem;
+
+        @include large {
+            top: 4.5rem;
+            right: 15.3rem;
+        }
 
         display: flex;
         justify-content: center;
