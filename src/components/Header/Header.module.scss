@@ -1,12 +1,14 @@
 @import '../../sass/base.scss';
 
 .header {
-    height: 12rem;
+    height: 10rem;
     background-image: linear-gradient(145deg, $color-orange 35%, $color-champagne);
     position: relative;
+    margin-bottom: 10rem;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    //justify-content: space-between;
     //align on the y axis
     align-items: center;
     font-size: 1.5rem;
@@ -15,7 +17,8 @@
 h2 {
     font-size: 3rem;
     font-weight: 600;
-    margin-left: 4rem;
+    padding: 3rem 0;
+    //margin-left: 4rem;
     color: $color-white;
 }
 
@@ -42,8 +45,8 @@ h2 {
         background-color: $color-grey;
         //position on top of link
         position: absolute;
-        top: 4rem;
-        right: 11rem;
+        top: 11.5rem;
+        right: 17.9rem;
 
         display: flex;
         justify-content: center;
