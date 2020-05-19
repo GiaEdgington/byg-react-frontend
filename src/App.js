@@ -6,6 +6,7 @@ import AppContext from './contexts/AppContext';
 import BookLanding from './pages/BookLanding';
 import BookList from './pages/BookList';
 import SignIn from './auth/Login';
+import SignUp from './auth/SignUp';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/login">
           <SignIn />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
         </Route>
       </Switch>
     </Router>
