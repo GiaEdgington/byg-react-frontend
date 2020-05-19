@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
-    const { updateUser, updatePassword, password, user } = useContext(AppContext);
+    const { updateUser, updatePassword, user, password } = useContext(AppContext);
     
     const handleChange = (username) => {
         updateUser(username);
@@ -14,6 +14,25 @@ const SignUp = () => {
 
     const handlePassword = (userPassword) => {
         updatePassword(userPassword);
+    };
+
+    const createUser = async () => {
+        try {
+            let newUser = await fetch('http://localhost:3000/auth/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accepts': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: user,
+                    password: password
+                })
+            })
+            console.log(newUser); 
+        } catch (err) {
+            console.log(err)
+        }
     };
 
     return (
@@ -26,7 +45,7 @@ const SignUp = () => {
                         <input type="text" onChange={(e) => handleChange(e.target.value)}></input>
                         <label>Password</label>
                         <input type="password" onChange={(e) => handlePassword(e.target.value)}></input>
-                        <button type="submit" className={styles.btnlogin}>Submit</button>
+                        <button type="button" value="submit" onClick={createUser} className={styles.btnlogin}>Submit</button>
                     </form>
                 </div>
             </div>
