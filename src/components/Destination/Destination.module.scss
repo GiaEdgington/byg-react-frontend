@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
 
+
     @include large {
          width: 450px;
          margin-top: 7rem;
@@ -25,6 +26,7 @@
     text-align: center;
 
     @include large {
+        text-align: left;
         margin-left: auto;
         font-size: 2rem; 
         padding: 1.3rem;

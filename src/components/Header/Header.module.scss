@@ -62,13 +62,17 @@ h2 {
         top: 11.5rem;
         right: 17.9rem;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include medium {
+            right: 37.5rem;
+        }
+
         @include large {
             top: 4.5rem;
             right: 15.3rem;
         }
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 } 
