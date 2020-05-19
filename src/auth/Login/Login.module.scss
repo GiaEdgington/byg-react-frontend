@@ -1,20 +1,35 @@
-.signin {
+@import '../../sass/base.scss';
+
+.container {
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
-.signin .form {
-    //width: 90rem;
-    //height: 50rem;
-    //padding: 15rem;
-    //border: 1px gray solid;
+.signin {
+    margin-top: 6rem;
 
+    @include medium {
+        margin-top: 10rem;
+    }
+
+    @include large {
+        margin-top: 17rem;
+    }
+}
+
+.signin .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include large {
+        width: 90rem;
+        height: 50rem;
+        //padding: 15rem;
+        border: 1px gray solid;
+    }
 
 
     & label {
