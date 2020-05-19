@@ -1,20 +1,32 @@
+@import '../../sass/base.scss';
 
 .destinationCard {
-    width: 450px;
+    width: 100%;
     height: 600px;
-    margin-top: 7rem;
-    border: 1rem gray solid;
+    margin-top: 1rem;
+    border: .2rem gray solid;
     overflow-y: scroll;
 
     display: flex;
     flex-direction: column;
+
+    @include large {
+         width: 450px;
+         margin-top: 7rem;
+    }
 }
 
 .destination {
     width: 100%;
-    margin-left: auto;
     background-color: grey;
-    font-size: 2rem;  
-    padding: 1.3rem;
+    font-size: 1.7rem; 
+    padding: 0.2rem 1.3rem;
     color: #fff;
+    text-align: center;
+
+    @include large {
+        margin-left: auto;
+        font-size: 2rem; 
+        padding: 1.3rem;
+    }
 }
