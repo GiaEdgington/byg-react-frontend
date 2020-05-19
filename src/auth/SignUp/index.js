@@ -15,9 +15,7 @@ const SignUp = () => {
                         <input type="text"></input>
                         <label>Password</label>
                         <input type="password"></input>
-                        <button type="submit" className={styles.btnlogin}>Log In</button>
-                        <span>Dont have an account?</span>
-                        <button className={styles.btnSignup}>Submit</button>
+                        <button type="submit" className={styles.btnlogin}>Submit</button>
                     </form>
                 </div>
             </div>
