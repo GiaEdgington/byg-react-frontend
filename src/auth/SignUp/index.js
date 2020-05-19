@@ -1,9 +1,13 @@
 import React from 'react';
 
+import AppContext from '../../contexts/AppContext';
+
 import Header from '../../components/Header';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
+    const { updateUser } = useContext(AppContext);
+    
 
     return (
         <div>
@@ -21,7 +25,6 @@ const SignUp = () => {
             </div>
         </div>
     )
-
 }
 
 export default SignUp;

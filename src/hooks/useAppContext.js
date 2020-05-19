@@ -8,6 +8,7 @@ export default function useAppContext() {
     const [savedBooks, fetchSavedBooks] = useState([]);
     const [savedDestinations, fetchSavedDestinations] = useState({settings: [], destinationId: ""});
     const [reload, setReload] = useState(false);
+    const [user, setUser] = useState("");
 
     const fetchBooks = async () => {
         try {
@@ -40,6 +41,10 @@ export default function useAppContext() {
     const updateDestination = (location) => {
        setDestination({ setting: location});
     };
+
+    const updateUser = (username) => {
+        setUser(username);
+     };
 
     const readMore = (bookId)=> {
         let updateBooks = [...books];
@@ -105,7 +110,9 @@ export default function useAppContext() {
         addBook,
         savedDestinations,
         getSavedBooks,
-        savedBooks
+        savedBooks,
+        updateUser,
+        user
     }
 };
 
