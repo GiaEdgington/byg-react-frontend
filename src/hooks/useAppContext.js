@@ -9,6 +9,7 @@ export default function useAppContext() {
     const [savedDestinations, fetchSavedDestinations] = useState({settings: [], destinationId: ""});
     const [reload, setReload] = useState(false);
     const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
 
     const fetchBooks = async () => {
         try {
@@ -45,6 +46,10 @@ export default function useAppContext() {
     const updateUser = (username) => {
         setUser(username);
      };
+
+    const updatePassword = (userPassword) => {
+        setPassword(userPassword);
+    }
 
     const readMore = (bookId)=> {
         let updateBooks = [...books];
@@ -112,7 +117,9 @@ export default function useAppContext() {
         getSavedBooks,
         savedBooks,
         updateUser,
-        user
+        user,
+        password,
+        updatePassword
     }
 };
 

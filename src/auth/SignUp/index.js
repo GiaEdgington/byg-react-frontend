@@ -6,11 +6,15 @@ import Header from '../../components/Header';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
-    const { updateUser } = useContext(AppContext);
+    const { updateUser, updatePassword, password, user } = useContext(AppContext);
     
     const handleChange = (username) => {
         updateUser(username);
-    }
+    };
+
+    const handlePassword = (userPassword) => {
+        updatePassword(userPassword);
+    };
 
     return (
         <div>
@@ -21,7 +25,7 @@ const SignUp = () => {
                         <label>Username</label>
                         <input type="text" onChange={(e) => handleChange(e.target.value)}></input>
                         <label>Password</label>
-                        <input type="password"></input>
+                        <input type="password" onChange={(e) => handlePassword(e.target.value)}></input>
                         <button type="submit" className={styles.btnlogin}>Submit</button>
                     </form>
                 </div>
