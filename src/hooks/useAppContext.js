@@ -51,6 +51,25 @@ export default function useAppContext() {
         setPassword(userPassword);
     }
 
+    const logUser = async () => {
+        try{
+            let client = await fetch('http://localhost:3000/auth/login', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accepts': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: user,
+                    password: password
+                })
+            })
+            console.log(client);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     const readMore = (bookId)=> {
         let updateBooks = [...books];
         updateBooks = updateBooks.map(book => {
@@ -119,7 +138,8 @@ export default function useAppContext() {
         updateUser,
         user,
         password,
-        updatePassword
+        updatePassword,
+        logUser
     }
 };
 
