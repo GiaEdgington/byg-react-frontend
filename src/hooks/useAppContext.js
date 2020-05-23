@@ -10,6 +10,7 @@ export default function useAppContext() {
     const [reload, setReload] = useState(false);
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
+    const [token, setToken] = useState(null);
 
     const fetchBooks = async () => {
         try {
@@ -34,7 +35,9 @@ export default function useAppContext() {
     
 
     useEffect(() => {
-        //fetchBooks();
+        const token = localStorage.getItem('token');
+        setToken(token);
+        //console.log(token);
         getSavedBooks();
         getSavedDestinations();
     }, [savedDestinations.length]);
@@ -64,7 +67,11 @@ export default function useAppContext() {
                     password: password
                 })
             })
-            console.log(client);
+            let loggedClient = await client.json();
+            console.log(loggedClient);
+            setToken(loggedClient.token);
+            localStorage.setItem('token', loggedClient.token);
+            localStorage.setItem('userId', loggedClient.userId);
         } catch (err) {
             console.log(err);
         }
@@ -112,7 +119,7 @@ export default function useAppContext() {
                     location: locationId
                 })
             })
-            console.log(result);
+            //console.log(result);
             setReload(!reload);
         } catch (err) {
             console.log(err);
@@ -139,7 +146,8 @@ export default function useAppContext() {
         user,
         password,
         updatePassword,
-        logUser
+        logUser,
+        token
     }
 };
 
