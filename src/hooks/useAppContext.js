@@ -11,6 +11,8 @@ export default function useAppContext() {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState(null);
+    const [isAuth, setAuth] = useState(false);
+    const [userId, setUserId] = useState(null);
 
     const fetchBooks = async () => {
         try {
@@ -68,8 +70,10 @@ export default function useAppContext() {
                 })
             })
             let loggedClient = await client.json();
-            console.log(loggedClient);
+            //console.log(loggedClient);
             setToken(loggedClient.token);
+            setUserId(loggedClient.userId);
+            setAuth(true);
             localStorage.setItem('token', loggedClient.token);
             localStorage.setItem('userId', loggedClient.userId);
         } catch (err) {
