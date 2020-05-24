@@ -80,6 +80,7 @@ export default function useAppContext() {
             new Date().getTime() + remainingMilliseconds
             );
             localStorage.setItem('expiryDate', expiryDate.toISOString());
+            setAutoLogout(remainingMilliseconds);
         } catch (err) {
             console.log(err);
         }
@@ -90,6 +91,12 @@ export default function useAppContext() {
         setToken(null);
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
+    }
+
+    const setAutoLogout = (milliseconds) => {
+        setTimeout(() => {
+            signOutHandler();
+        }, milliseconds);
     }
 
     const readMore = (bookId)=> {
