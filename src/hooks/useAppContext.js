@@ -38,7 +38,6 @@ export default function useAppContext() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        setToken(token);
         //console.log(token);
         getSavedBooks();
         getSavedDestinations();
@@ -79,6 +78,13 @@ export default function useAppContext() {
         } catch (err) {
             console.log(err);
         }
+    }
+
+    signOutHandler = () => {
+        setAuth(false);
+        setToken(null);
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
     }
 
     const readMore = (bookId)=> {
@@ -151,7 +157,8 @@ export default function useAppContext() {
         password,
         updatePassword,
         logUser,
-        token
+        isAuth,
+        signOutHandler
     }
 };
 

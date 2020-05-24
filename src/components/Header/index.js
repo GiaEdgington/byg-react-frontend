@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-    const { savedDestinations } = useContext(AppContext);
+    const { savedDestinations, isAuth, signOutHandler } = useContext(AppContext);
 
     return (
         <header className={styles.header}>
@@ -18,9 +18,13 @@ const Header = () => {
                     <span>Book List</span>
                 </Link>
                 <span className={styles.notification}>{savedDestinations.settings.length}</span>
+                { isAuth ? 
+                <span className="" onClick={signOutHandler}>Sign Out</span>
+                :
                 <Link to = "/login" className="login">
                     <span className="">Sign In</span>
                 </Link>
+                }
             </nav>
         </header>
     );
