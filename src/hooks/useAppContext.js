@@ -75,12 +75,17 @@ export default function useAppContext() {
             setAuth(true);
             localStorage.setItem('token', loggedClient.token);
             localStorage.setItem('userId', loggedClient.userId);
+            const remainingMilliseconds = 60 * 60 * 1000;
+            const expiryDate = new Date(
+            new Date().getTime() + remainingMilliseconds
+            );
+            localStorage.setItem('expiryDate', expiryDate.toISOString());
         } catch (err) {
             console.log(err);
         }
     }
 
-    signOutHandler = () => {
+    const signOutHandler = () => {
         setAuth(false);
         setToken(null);
         localStorage.removeItem('token');
