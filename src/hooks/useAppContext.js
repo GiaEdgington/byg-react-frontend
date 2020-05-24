@@ -38,18 +38,36 @@ export default function useAppContext() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        //console.log(token);
+        const expiryDate = localStorage.getItem('expiryDate');
+        if(!token || !expiryDate){
+            return;
+        }
+        if (new Date(expiryDate) <= new Date()) {
+            signOutHandler();
+            return;
+        }
+        const userId = localStorage.getItem('userId');
+        const remainingMilliseconds =
+        new Date(expiryDate).getTime() - new Date().getTime();
+        setAuth(true);
+        setToken(token);
+        setUserId(userId);
+        setAutoLogout(remainingMilliseconds);
+
         getSavedBooks();
         getSavedDestinations();
     }, [savedDestinations.length]);
+
 
     const updateDestination = (location) => {
        setDestination({ setting: location});
     };
 
+
     const updateUser = (username) => {
         setUser(username);
      };
+
 
     const updatePassword = (userPassword) => {
         setPassword(userPassword);
@@ -170,7 +188,7 @@ export default function useAppContext() {
         updatePassword,
         logUser,
         isAuth,
-        signOutHandler
+        signOutHandler,
     }
 };
 
