@@ -22,8 +22,6 @@ function BookLanding() {
         updateDestination(location);
     };
 
-    //console.log(token);
-
     return(
         <div>
             <Header />
