@@ -41,6 +41,7 @@
     & button {
         margin-top: -2rem;
         padding: 1.2rem 1.5rem;
+        border: none;
         border-radius: 10px;
         background-color: $color-grey;
         color: $color-white;
@@ -48,8 +49,8 @@
 
         @include large {
             margin-top: 0;
-            padding: 2rem 3rem;
-            font-size: 2rem;
+            padding: 1.5rem 2.5rem;
+            font-size: 1.5rem;
         }
     }
 }
