@@ -12,7 +12,7 @@ export default function useAppContext() {
     const [password, setPassword] = useState("");
     const [token, setToken] = useState(null);
     const [isAuth, setAuth] = useState(false);
-    const [userId, setUserId] = useState(null);
+    const [userId, setUserId] = useState("");
 
     const fetchBooks = async () => {
         try {
@@ -132,12 +132,14 @@ export default function useAppContext() {
            let location = await fetch('http://localhost:3000/destination', {
                 method: 'POST',
                 headers: {
+                    Authorization: 'Bearer ' + token,
                     'Content-Type': 'application/json',
                     'Accepts': 'application/json'
                 },
                 body: JSON.stringify({
                     location: destination.setting,
-                    books: []
+                    books: [],
+                    user: userId
                 })
            })
            let locationJson = await location.json();
