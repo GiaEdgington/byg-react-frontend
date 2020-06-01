@@ -63,7 +63,6 @@ export default function useAppContext() {
        setDestination({ setting: location});
     };
 
-
     const updateUser = (username) => {
         setUser(username);
      };
@@ -190,7 +189,7 @@ export default function useAppContext() {
         updatePassword,
         logUser,
         isAuth,
-        signOutHandler,
+        signOutHandler
     }
 };
 
