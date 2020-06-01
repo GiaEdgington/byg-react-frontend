@@ -26,6 +26,18 @@ const Destination = (destination) => {
         getDestinationBooks(destination);
     }, []);
 
+    const removeDestination = async () => {
+        try{
+            let delDest = await fetch(`http://localhost:3000/destination/${destination.destinationId}`, {
+                method: 'DELETE'
+            })
+            console.log('destination removed');
+            return delDest.json();
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     const getBook = (book) => (
             <BookCard
             {...book}
@@ -36,6 +48,7 @@ const Destination = (destination) => {
     return (
         <div className={styles.destinationCard}>
             <h2 className={styles.destination}>{destinationData.location}</h2>
+            <button type="button" value="submit" onClick={removeDestination} style={{ textAlign:'right', paddingRight:'1em'}}>Remove</button>
                 <div>
                     {[...destinationData.books].map(book => getBook(book))}
                 </div>
