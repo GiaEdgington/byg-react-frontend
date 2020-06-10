@@ -189,6 +189,7 @@ export default function useAppContext() {
         updatePassword,
         logUser,
         isAuth,
+        token,
         signOutHandler
     }
 };

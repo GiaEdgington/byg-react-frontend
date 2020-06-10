@@ -5,7 +5,7 @@ import styles from './Destination.module.scss';
 
 const Destination = (destination) => {
     //console.log(destination);
-    const [destinationData, setBooks] = useState({ books: [], location: ""});
+    const [destinationData, setBooks, token] = useState({ books: [], location: ""});
 
     const getDestinationBooks = async (destination) => {
 
@@ -27,9 +27,12 @@ const Destination = (destination) => {
     }, []);
 
     const removeDestination = async () => {
-        try{
+        try {
             let delDest = await fetch(`http://localhost:3000/destination/${destination.destinationId}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    Authorization: 'Bearer ' + token 
+                }
             })
             console.log('destination removed');
             return delDest.json();
