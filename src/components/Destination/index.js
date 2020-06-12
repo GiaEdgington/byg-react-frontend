@@ -44,7 +44,7 @@ const Destination = (destination) => {
     const getBook = (book) => (
             <BookCard
             {...book}
-            key={book[0]._id}
+            //key={book.id}
             book={book}
             />
     );
